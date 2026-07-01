@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Night - Aventura RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌑 DARK NIGHT</h1>
+            <p class="subtitle">Uma aventura de escolhas sombrias</p>
+        </header>
+        
+        <div id="game" class="game">
+            <div id="scene" class="scene">
+                <div id="story" class="story"></div>
+                <div id="choices" class="choices"></div>
+            </div>
+            
+            <div id="ending" class="ending hidden">
+                <h2 id="ending-title"></h2>
+                <div id="ending-text" class="story"></div>
+                <button onclick="restartGame()" class="restart-btn">Jogar Novamente</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Feito com ❤️ para GitHub Pages • Escolha sabiamente...</p>
+        </footer>
+    </div>
 
+    <script src="script.js"></script>
+</body>
+</html>

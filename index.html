@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Night - Aventura RPG</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⚔️ Aventura RPG - O Amuleto de Zog</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
+
+    <div id="app">
         <header>
-            <h1>🌑 DARK NIGHT</h1>
-            <p class="subtitle">Uma aventura de escolhas sombrias</p>
+            <h1>⚔️ O Amuleto de Zog</h1>
+            <div id="status">
+                <span>❤️ Vida: <span id="hp">10</span></span>
+                <span>🎒 Itens: <span id="items">Nenhum</span></span>
+            </div>
         </header>
-        
-        <div id="game" class="game">
-            <div id="scene" class="scene">
-                <div id="story" class="story"></div>
-                <div id="choices" class="choices"></div>
+
+        <main>
+            <div id="scene">
+                <img id="sceneImage" src="" alt="Cena" />
+                <div id="storyText">
+                    <p id="description">Carregando história...</p>
+                </div>
             </div>
-            
-            <div id="ending" class="ending hidden">
-                <h2 id="ending-title"></h2>
-                <div id="ending-text" class="story"></div>
-                <button onclick="restartGame()" class="restart-btn">Jogar Novamente</button>
+
+            <div id="choices">
+                <!-- Botões gerados dinamicamente -->
             </div>
-        </div>
-        
+
+            <div id="diceArea">
+                <button id="rollDiceBtn" class="hidden">🎲 Rolar Dado</button>
+                <div id="diceResult" class="hidden"></div>
+            </div>
+        </main>
+
         <footer>
-            <p>Feito com ❤️ para GitHub Pages • Escolha sabiamente...</p>
+            <p>🎧 Música ambiente</p>
+            <audio id="bgMusic" loop>
+                <source src="https://cdn.pixabay.com/audio/2021/08/04/audio_24e8b5a7c1.mp3" type="audio/mpeg" />
+                Seu navegador não suporta áudio.
+            </audio>
+            <button id="musicToggle">🔇 Desativar Música</button>
         </footer>
+    </div>
+
+    <!-- Modal de rolagem de dado -->
+    <div id="diceModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎲 Rolando Dado...</h2>
+            <div class="dice-animation">
+                <span id="diceNumber">?</span>
+            </div>
+            <p id="diceMessage">Aguardando...</p>
+            <button id="diceModalClose">Continuar</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
